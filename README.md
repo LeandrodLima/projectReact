@@ -1,6 +1,9 @@
 # project React native Expo
 
+
 ### Install
+abrir a pasta ./projectReact no terminal
+
 ```bash
 yarn install
 yarn start
@@ -10,4 +13,4 @@ yarn start
 
 Instale o aplicativo <kbd>[Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en)</kbd> no seu smartphone.
 
-escanear um código QR
+escanear o  QR código.
