@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Component } from 'react';
 import {
     View,
     Text,
@@ -10,7 +10,6 @@ import {
     ImageBackground
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-
 
 export default function Home({navigation}) {
     return (
