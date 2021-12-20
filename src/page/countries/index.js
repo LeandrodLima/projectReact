@@ -1,6 +1,6 @@
-import React, { useState }from 'react';
+import React, { useState,useEffect }from 'react';
 import { SafeAreaView, StatusBar, TouchableOpacity, FlatList, StyleSheet, Text, View } from 'react-native';
-import { getAPI } from "../../controller/countriesController"
+import { getAPICT } from "../../controller/Controller"
 
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
@@ -12,8 +12,8 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 const FlatListBasics = () => {
     const [selectedId, setSelectedId] = useState(null);
     const [thisData, setThisData] = useState([]);
-    async function keyboardDidShow() {
-        let aux = await getAPI()
+    async function getCT() {
+        let aux = await getAPICT()
         let newData=[]
         function sortByAge(arr) {
             arr.sort((a, b) => b.nF - a.nF);
@@ -27,7 +27,9 @@ const FlatListBasics = () => {
         const sortedByAge = sortByAge(newData)
         setThisData(newData)
     }
-    keyboardDidShow()
+    useEffect(async () => {
+        await getCT()
+    }, [])
     const renderItem = ({ item }) => {
         const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
         const color = item.id === selectedId ? 'white' : 'black';
